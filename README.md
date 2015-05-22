@@ -188,6 +188,7 @@ ENTER NEW COMMAND (~) > open /usr/local/etc/tor/torrc
 ## Then add these lines at the top, substituting your details for MY_ONION.onion, MY_KEY and MY_CLIENT
 
 Log notice file /usr/local/Cellar/tor/0.2.6.7/var/log/tor/notices.log
+
 HidServAuth MY_ONION.onion MY_KEY #client: MY_CLIENT
 
 
