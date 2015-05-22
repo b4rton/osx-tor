@@ -12,6 +12,7 @@ FIRST INSTALL HOMEBREW
 ======================
 
    ENTER NEW COMMAND (~) > ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   
 ==> This script will install:
 /usr/local/bin/brew
 /usr/local/Library/...
