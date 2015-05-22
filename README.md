@@ -197,6 +197,7 @@ UNLOAD AND RELOAD TOR
 ======================
 
 ENTER NEW COMMAND (~) > launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.tor.plist
+
 ENTER NEW COMMAND (~) > launchctl load ~/Library/LaunchAgents/homebrew.mxcl.tor.plist
 
 ====================
