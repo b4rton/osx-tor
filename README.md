@@ -11,43 +11,43 @@ These instructions begin from scratch, without assuming anything is installed.
 FIRST INSTALL HOMEBREW
 ======================
 
-   ENTER NEW COMMAND (~) > ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-   
-==> This script will install:
-/usr/local/bin/brew
-/usr/local/Library/...
-/usr/local/share/man/man1/brew.1
-==> The following directories will be made group writable:
-/usr/local/.
-/usr/local/bin
-/usr/local/include
-/usr/local/lib
-/usr/local/lib/pkgconfig
-==> The following directories will have their group set to admin:
-/usr/local/.
-/usr/local/bin
-/usr/local/include
-/usr/local/lib
-/usr/local/lib/pkgconfig
+ENTER NEW COMMAND (~) > ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-Press RETURN to continue or any other key to abort
-==> /usr/bin/sudo /bin/chmod g+rwx /usr/local/. /usr/local/bin /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig
-Password:
-==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local/. /usr/local/bin /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig
-==> /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
-==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
-==> Downloading and installing Homebrew...
-remote: Counting objects: 3585, done.
-remote: Compressing objects: 100% (3430/3430), done.
-remote: Total 3585 (delta 35), reused 1451 (delta 19), pack-reused 0
-Receiving objects: 100% (3585/3585), 2.75 MiB | 5.16 MiB/s, done.
-Resolving deltas: 100% (35/35), done.
-From https://github.com/Homebrew/homebrew
- * [new branch]      master     -> origin/master
-HEAD is now at 2c822ce rabbitmq: remove bottle.
-==> Installation successful!
-==> Next steps
-Run `brew help` to get started
+    ==> This script will install:
+    /usr/local/bin/brew
+    /usr/local/Library/...
+    /usr/local/share/man/man1/brew.1
+    ==> The following directories will be made group writable:
+    /usr/local/.
+    /usr/local/bin
+    /usr/local/include
+    /usr/local/lib
+    /usr/local/lib/pkgconfig
+    ==> The following directories will have their group set to admin:
+    /usr/local/.
+    /usr/local/bin
+    /usr/local/include
+    /usr/local/lib
+    /usr/local/lib/pkgconfig
+
+    Press RETURN to continue or any other key to abort
+    ==> /usr/bin/sudo /bin/chmod g+rwx /usr/local/. /usr/local/bin /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig
+    Password:
+    ==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local/. /usr/local/bin /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig
+    ==> /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
+    ==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+    ==> Downloading and installing Homebrew...
+    remote: Counting objects: 3585, done.
+    remote: Compressing objects: 100% (3430/3430), done.
+    remote: Total 3585 (delta 35), reused 1451 (delta 19), pack-reused 0
+    Receiving objects: 100% (3585/3585), 2.75 MiB | 5.16 MiB/s, done.
+    Resolving deltas: 100% (35/35), done.
+    From https://github.com/Homebrew/homebrew
+     * [new branch]      master     -> origin/master
+    HEAD is now at 2c822ce rabbitmq: remove bottle.
+    ==> Installation successful!
+    ==> Next steps
+    Run `brew help` to get started
 
 
 
@@ -55,79 +55,80 @@ Run `brew help` to get started
 THEN INSTALL TOR
 ===============
 
-   ENTER NEW COMMAND (~) > brew install tor
-   
-==> Installing dependencies for tor: openssl, libevent
-==> Installing tor dependency: openssl
-==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2a-1.mavericks.
-######################################################################## 100.0%
-==> Pouring openssl-1.0.2a-1.mavericks.bottle.1.tar.gz
-==> Caveats
-A CA file has been bootstrapped using certificates from the system
-keychain. To add additional certificates, place .pem files in
-  /usr/local/etc/openssl/certs
+ENTER NEW COMMAND (~) > brew install tor
 
-and run
-  /usr/local/opt/openssl/bin/c_rehash
+    ==> Installing dependencies for tor: openssl, libevent
+    ==> Installing tor dependency: openssl
+    ==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2a-1.mavericks.
+    ######################################################################## 100.0%
+    ==> Pouring openssl-1.0.2a-1.mavericks.bottle.1.tar.gz
+    ==> Caveats
+    A CA file has been bootstrapped using certificates from the system
+    keychain. To add additional certificates, place .pem files in
+      /usr/local/etc/openssl/certs
 
-This formula is keg-only, which means it was not symlinked into /usr/local.
+    and run
+      /usr/local/opt/openssl/bin/c_rehash
 
-Mac OS X already provides this software and installing another version in
-parallel can cause all kinds of trouble.
+    This formula is keg-only, which means it was not symlinked into /usr/local.
 
-Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries
+    Mac OS X already provides this software and installing another version in
+    parallel can cause all kinds of trouble.
 
-Generally there are no consequences of this for you. If you build your
-own software and it requires this formula, you'll need to add to your
-build variables:
+    Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries
 
-    LDFLAGS:  -L/usr/local/opt/openssl/lib
-    CPPFLAGS: -I/usr/local/opt/openssl/include
+    Generally there are no consequences of this for you. If you build your
+    own software and it requires this formula, you'll need to add to your
+    build variables:
 
-==> Summary
-🍺  /usr/local/Cellar/openssl/1.0.2a-1: 463 files, 18M
-==> Installing tor dependency: libevent
-==> Downloading https://homebrew.bintray.com/bottles/libevent-2.0.22.mavericks.b
-######################################################################## 100.0%
-==> Pouring libevent-2.0.22.mavericks.bottle.tar.gz
-🍺  /usr/local/Cellar/libevent/2.0.22: 48 files, 1.8M
-==> Installing tor
-==> Downloading https://homebrew.bintray.com/bottles/tor-0.2.6.7.mavericks.bottl
-######################################################################## 100.0%
-==> Pouring tor-0.2.6.7.mavericks.bottle.tar.gz
-==> Caveats
-You will find a sample `torrc` file in /usr/local/etc/tor.
-It is advisable to edit the sample `torrc` to suit
-your own security needs:
-  https://www.torproject.org/docs/faq#torrc
-After editing the `torrc` you need to restart tor.
+        LDFLAGS:  -L/usr/local/opt/openssl/lib
+        CPPFLAGS: -I/usr/local/opt/openssl/include
 
-To have launchd start tor at login:
-    ln -sfv /usr/local/opt/tor/*.plist ~/Library/LaunchAgents
-Then to load tor now:
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.tor.plist
-==> Summary
-🍺  /usr/local/Cellar/tor/0.2.6.7: 19 files, 7.0M
+    ==> Summary
+    🍺  /usr/local/Cellar/openssl/1.0.2a-1: 463 files, 18M
+    ==> Installing tor dependency: libevent
+    ==> Downloading https://homebrew.bintray.com/bottles/libevent-2.0.22.mavericks.b
+    ######################################################################## 100.0%
+    ==> Pouring libevent-2.0.22.mavericks.bottle.tar.gz
+    🍺  /usr/local/Cellar/libevent/2.0.22: 48 files, 1.8M
+    ==> Installing tor
+    ==> Downloading https://homebrew.bintray.com/bottles/tor-0.2.6.7.mavericks.bottl
+    ######################################################################## 100.0%
+    ==> Pouring tor-0.2.6.7.mavericks.bottle.tar.gz
+    ==> Caveats
+    You will find a sample `torrc` file in /usr/local/etc/tor.
+    It is advisable to edit the sample `torrc` to suit
+    your own security needs:
+      https://www.torproject.org/docs/faq#torrc
+    After editing the `torrc` you need to restart tor.
+
+    To have launchd start tor at login:
+        ln -sfv /usr/local/opt/tor/*.plist ~/Library/LaunchAgents
+    Then to load tor now:
+        launchctl load ~/Library/LaunchAgents/homebrew.mxcl.tor.plist
+    ==> Summary
+    🍺  /usr/local/Cellar/tor/0.2.6.7: 19 files, 7.0M
 
 
 =====================
 THEN INSTALL TORSOCKS
 =====================
 
-   ENTER NEW COMMAND (~) > brew install torsocks
-   
-==> Downloading https://homebrew.bintray.com/bottles/torsocks-2.0.0.mavericks.bo
-######################################################################## 100.0%
-==> Pouring torsocks-2.0.0.mavericks.bottle.tar.gz
-🍺  /usr/local/Cellar/torsocks/2.0.0: 16 files, 284K
+ENTER NEW COMMAND (~) > brew install torsocks
+
+    ==> Downloading https://homebrew.bintray.com/bottles/torsocks-2.0.0.mavericks.bo
+    ######################################################################## 100.0%
+    ==> Pouring torsocks-2.0.0.mavericks.bottle.tar.gz
+    🍺  /usr/local/Cellar/torsocks/2.0.0: 16 files, 284K
 
 
 ============================================
 THEN SET TOR TO START AT LOGIN USING LAUNCHD
 ============================================
 
-   ENTER NEW COMMAND (~) > ln -sfv /usr/local/opt/tor/*.plist ~/Library/LaunchAgents
-/Users/brass/Library/LaunchAgents/homebrew.mxcl.tor.plist -> /usr/local/opt/tor/homebrew.mxcl.tor.plist
+ENTER NEW COMMAND (~) > ln -sfv /usr/local/opt/tor/*.plist ~/Library/LaunchAgents
+
+    /Users/brass/Library/LaunchAgents/homebrew.mxcl.tor.plist -> /usr/local/opt/tor/homebrew.mxcl.tor.plist
 
 
 ============
@@ -157,15 +158,15 @@ CREATE LOG FILE
 ## First create subdirectories for a log file (the directory '0.2.6.7' could change in later Tor versions)
 
 ________________________________________
-   ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/
+ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/
 _________________________________________
-   ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/log/
+ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/log/
 _________________________________________
-   ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/log/tor/
+ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/log/tor/
 
 ## Then create log file:
 _________________________________________
-   ENTER NEW COMMAND (~) > touch /usr/local/Cellar/tor/0.2.6.7/var/log/tor/notices.log
+ENTER NEW COMMAND (~) > touch /usr/local/Cellar/tor/0.2.6.7/var/log/tor/notices.log
 
 
 =================
@@ -174,11 +175,11 @@ CREATE TORRC FILE
 
 ## This creates torrc from the torrc.sample that Brew installs by default
 
-   ENTER NEW COMMAND (~) > mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
+ENTER NEW COMMAND (~) > mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
 
 
 ==========
-EDIT TORRC 
+EDIT TORRC
 ==========
 
 ## Add logging and a pointer to a hidden service
