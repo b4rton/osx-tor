@@ -55,6 +55,7 @@ THEN INSTALL TOR
 ===============
 
    ENTER NEW COMMAND (~) > brew install tor
+   
 ==> Installing dependencies for tor: openssl, libevent
 ==> Installing tor dependency: openssl
 ==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2a-1.mavericks.
@@ -113,6 +114,7 @@ THEN INSTALL TORSOCKS
 =====================
 
    ENTER NEW COMMAND (~) > brew install torsocks
+   
 ==> Downloading https://homebrew.bintray.com/bottles/torsocks-2.0.0.mavericks.bo
 ######################################################################## 100.0%
 ==> Pouring torsocks-2.0.0.mavericks.bottle.tar.gz
@@ -138,6 +140,7 @@ TEST THAT TOR IS RUNNING
 ========================
 
 ENTER NEW COMMAND (~) > torify curl -s https://check.torproject.org | grep Congratulations
+
       Congratulations. This browser is configured to use Tor.
 
 
