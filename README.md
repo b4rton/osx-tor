@@ -7,7 +7,6 @@ Various instructions I found online came close but didn't work. With much help f
 
 These instructions begin from scratch, without assuming anything is installed.
 
-======================
 FIRST INSTALL HOMEBREW
 ======================
 
@@ -50,10 +49,8 @@ ENTER NEW COMMAND (~) > ruby -e "$(curl -fsSL https://raw.githubusercontent.com/
     Run `brew help` to get started
 
 
-
-==============
 THEN INSTALL TOR
-===============
+================
 
 ENTER NEW COMMAND (~) > brew install tor
 
@@ -110,7 +107,7 @@ ENTER NEW COMMAND (~) > brew install tor
     🍺  /usr/local/Cellar/tor/0.2.6.7: 19 files, 7.0M
 
 
-=====================
+
 THEN INSTALL TORSOCKS
 =====================
 
@@ -122,7 +119,7 @@ ENTER NEW COMMAND (~) > brew install torsocks
     🍺  /usr/local/Cellar/torsocks/2.0.0: 16 files, 284K
 
 
-============================================
+
 THEN SET TOR TO START AT LOGIN USING LAUNCHD
 ============================================
 
@@ -131,13 +128,13 @@ ENTER NEW COMMAND (~) > ln -sfv /usr/local/opt/tor/*.plist ~/Library/LaunchAgent
     /Users/brass/Library/LaunchAgents/homebrew.mxcl.tor.plist -> /usr/local/opt/tor/homebrew.mxcl.tor.plist
 
 
-============
+
 LOAD TOR NOW
 ============
 
 ENTER NEW COMMAND (~) > launchctl load ~/Library/LaunchAgents/homebrew.mxcl.tor.plist
 
-========================
+
 TEST THAT TOR IS RUNNING
 ========================
 
@@ -150,8 +147,6 @@ ENTER NEW COMMAND (~) > torify curl -s https://check.torproject.org | grep Congr
 ## You can stop here. I like to tweak the torrc file to add logging and pointers to a hidden service
 
 
-
-===============
 CREATE LOG FILE
 ===============
 
@@ -169,7 +164,6 @@ _________________________________________
 ENTER NEW COMMAND (~) > touch /usr/local/Cellar/tor/0.2.6.7/var/log/tor/notices.log
 
 
-=================
 CREATE TORRC FILE
 =================
 
@@ -178,7 +172,7 @@ CREATE TORRC FILE
 ENTER NEW COMMAND (~) > mv /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
 
 
-==========
+
 EDIT TORRC
 ==========
 
@@ -193,7 +187,6 @@ Log notice file /usr/local/Cellar/tor/0.2.6.7/var/log/tor/notices.log
 HidServAuth MY_ONION.onion MY_KEY #client: MY_CLIENT
 
 
-======================
 UNLOAD AND RELOAD TOR
 ======================
 
@@ -201,7 +194,7 @@ ENTER NEW COMMAND (~) > launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.to
 
 ENTER NEW COMMAND (~) > launchctl load ~/Library/LaunchAgents/homebrew.mxcl.tor.plist
 
-====================
+
 TEST HIDDEN SERVICE
 ====================
 
