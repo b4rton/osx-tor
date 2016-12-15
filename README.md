@@ -1,4 +1,7 @@
 # osx-tor
+
+(UPDATE 12/15/16: These instructions are out of date. References to tor-0.2.6.7 below need to be updated with the current version of Tor served by Homebrew. The general procedure should still work.)
+
 How to set Tor to run as background process on every OSX login
 
 I wanted to install Tor in a Mac OSx VM and set it to launch on login, running in the background at all times. This makes it available to access hidden services or to pipe clients like Adium for Jabber chat through Tor.
