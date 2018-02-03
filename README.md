@@ -141,7 +141,7 @@ ENTER NEW COMMAND (~) > launchctl load ~/Library/LaunchAgents/homebrew.mxcl.tor.
 TEST THAT TOR IS RUNNING
 ========================
 
-ENTER NEW COMMAND (~) > torify curl -s https://check.torproject.org | grep Congratulations
+ENTER NEW COMMAND (~) > curl --proxy socks5h://curl:curl@127.0.0.1:9050/ https://check.torproject.org | grep Congratulations
 
       Congratulations. This browser is configured to use Tor.
 
