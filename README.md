@@ -141,7 +141,7 @@ ENTER NEW COMMAND (~) > launchctl load ~/Library/LaunchAgents/homebrew.mxcl.tor.
 TEST THAT TOR IS RUNNING
 ========================
 
-ENTER NEW COMMAND (~) > torify curl -s https://check.torproject.org | grep Congratulations
+ENTER NEW COMMAND (~) > curl --proxy socks5h://curl:curl@127.0.0.1:9050/ https://check.torproject.org | grep Congratulations
 
       Congratulations. This browser is configured to use Tor.
 
@@ -153,18 +153,18 @@ ENTER NEW COMMAND (~) > torify curl -s https://check.torproject.org | grep Congr
 CREATE LOG FILE
 ===============
 
-## First create subdirectories for a log file (the directory '0.2.6.7' could change in later Tor versions)
+## First create subdirectories for a log file (the directory '0.3.2.9' could change in later Tor versions)
 
 ________________________________________
-ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/
+ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.3.2.9/var/
 _________________________________________
-ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/log/
+ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.3.2.9/var/log/
 _________________________________________
-ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.2.6.7/var/log/tor/
+ENTER NEW COMMAND (~) > mkdir /usr/local/Cellar/tor/0.3.2.9/var/log/tor/
 
 ## Then create log file:
 _________________________________________
-ENTER NEW COMMAND (~) > touch /usr/local/Cellar/tor/0.2.6.7/var/log/tor/notices.log
+ENTER NEW COMMAND (~) > touch /usr/local/Cellar/tor/0.3.2.9/var/log/tor/notices.log
 
 
 CREATE TORRC FILE
@@ -185,7 +185,7 @@ ENTER NEW COMMAND (~) > open /usr/local/etc/tor/torrc
 
 ## Then add these lines at the top, substituting your details for MY_ONION.onion, MY_KEY and MY_CLIENT
 
-Log notice file /usr/local/Cellar/tor/0.2.6.7/var/log/tor/notices.log
+Log notice file /usr/local/Cellar/tor/0.3.2.9/var/log/tor/notices.log
 
 HidServAuth MY_ONION.onion MY_KEY #client: MY_CLIENT
 
